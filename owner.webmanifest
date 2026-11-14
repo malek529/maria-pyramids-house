@@ -1,0 +1,15 @@
+{
+  "id": "owner.html",
+  "name": "Maria Pyramids House Owner",
+  "short_name": "Maria Owner",
+  "description": "Private owner desk for room prices, tours, Maria's notes and guest requests.",
+  "start_url": "owner.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FBF8F2",
+  "theme_color": "#0B1A35",
+  "icons": [
+    { "src": "assets/owner-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/owner-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

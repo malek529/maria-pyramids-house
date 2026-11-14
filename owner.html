@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Owner desk · Maria Pyramids House</title>
+<meta name="theme-color" content="#0B1A35">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Maria Owner">
+<link rel="manifest" href="owner.webmanifest">
+<link rel="apple-touch-icon" href="assets/owner-icon-192.png">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Private owner desk for Maria Pyramids House: prices, tours and guest requests.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B1A35; --ink-2:#0E2142; --gold:#D6A24A; --gold-d:#A9792C; --sand:#F6F1E8; --paper:#FBF8F2;
+  --text:#1B2338; --muted:#5D6578; --line:rgba(14,33,66,.12); --ok:#2F7D55; --bad:#B4412F;
+  --display:'Gilda Display',Georgia,serif; --body:'Manrope',system-ui,sans-serif;
+  --site-bg:var(--paper); --site-fg:var(--text); --site-accent:var(--gold); --site-on-accent:var(--ink);
+  --site-surface:#FFFFFF; --site-muted:var(--muted); --site-border:var(--line); --site-font:var(--body);
+  --site-radius:6px; --site-space:1; --site-type:1; --site-motion:1;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--site-bg);color:var(--site-fg);font-family:var(--site-font);font-size:calc(15px * var(--site-type,1));line-height:1.55}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.top{background:var(--ink);color:#fff;padding:calc(16px * var(--site-space,1)) calc(clamp(16px,4vw,40px) * var(--site-space,1));display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:calc(22px * var(--site-type,1));letter-spacing:.01em;margin-right:auto}
+.brand small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.who{font-size:13px;color:rgba(255,255,255,.75)}
+.top a{font-size:13px;color:var(--gold);text-decoration:none}
+.top a:hover{text-decoration:underline}
+main{max-width:1080px;margin:0 auto;padding:calc(28px * var(--site-space,1)) calc(clamp(16px,4vw,40px) * var(--site-space,1)) 80px}
+h1{font-family:var(--display);font-weight:400;font-size:calc(34px * var(--site-type,1));margin:0 0 6px;line-height:1.15}
+h2{font-family:var(--display);font-weight:400;font-size:calc(24px * var(--site-type,1));margin:0}
+.lead{color:var(--site-muted);margin:0 0 22px;max-width:62ch}
+.panel{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(22px * var(--site-space,1))}
+.gate{max-width:520px;margin:40px auto}
+.gate p{color:var(--site-muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--site-border);background:#fff;border-radius:var(--site-radius);padding:9px 16px;font-weight:700;font-size:13.5px;cursor:pointer;text-decoration:none;transition:background calc(.2s * var(--site-motion,1)),border-color calc(.2s * var(--site-motion,1))}
+.btn:hover{border-color:var(--ink)}
+.btn-gold{background:var(--site-accent);border-color:var(--site-accent);color:var(--site-on-accent)}
+.btn-gold:hover{background:var(--gold-d);border-color:var(--gold-d);color:#fff}
+.btn-sm{padding:6px 11px;font-size:12.5px}
+.btn-x{border-color:transparent;background:transparent;color:var(--bad);padding:6px 8px}
+.btn-x:hover{border-color:var(--bad)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--site-border);margin-bottom:22px}
+.tabs button{border:0;background:none;padding:11px 14px;font-weight:700;font-size:13.5px;color:var(--site-muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--gold)}
+.tabs .count{display:inline-block;min-width:20px;padding:0 6px;margin-left:6px;border-radius:10px;background:var(--bad);color:#fff;font-size:11px;line-height:18px;text-align:center}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.bar .grow{margin-right:auto}
+.hint{color:var(--site-muted);font-size:13px;margin:4px 0 0}
+.status{font-size:13px;font-weight:600;min-height:20px}
+.status.ok{color:var(--ok)} .status.bad{color:var(--bad)}
+.items{display:grid;gap:12px}
+.item{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(16px * var(--site-space,1))}
+.item-h{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.item-h b{font-size:15px;margin-right:auto}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.grid .wide{grid-column:1/-1}
+label.f{display:grid;gap:4px;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--site-muted)}
+label.f input,label.f textarea,label.f select{font-weight:500;font-size:14px;color:var(--text);border:1px solid var(--site-border);border-radius:calc(var(--site-radius) * .7);padding:8px 10px;background:#fff;width:100%}
+label.f textarea{min-height:70px;resize:vertical}
+label.f input:focus,label.f textarea:focus,label.f select:focus{outline:2px solid var(--gold);outline-offset:0;border-color:var(--gold)}
+label.chk{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.req{display:grid;grid-template-columns:auto 1fr auto;gap:6px 16px;align-items:start}
+.req .kind{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--sand);color:var(--ink-2)}
+.req .kind.service{background:#FCEFD6} .req .kind.booking{background:#DCEBF7} .req .kind.tour{background:#E3F1E6}
+.req h3{margin:0;font-size:15px}
+.req p{margin:2px 0 0;color:var(--site-muted);font-size:13.5px;white-space:pre-wrap;word-break:break-word}
+.req .meta{font-size:12.5px;color:var(--site-muted);text-align:right;white-space:nowrap}
+.req.done{opacity:.6}
+.req.cancelled{opacity:.62}
+.kind.cancelled{background:#F3E3E0;color:#a2402f}
+.toast-wrap{position:fixed;left:16px;bottom:16px;z-index:60;display:grid;gap:10px;max-width:min(360px,calc(100vw - 32px))}
+.toast{background:var(--ink);color:#fff;border:1px solid rgba(214,162,74,.55);border-radius:var(--site-radius);padding:14px 16px;box-shadow:0 20px 44px -18px rgba(11,26,53,.65);cursor:pointer;transform:translateY(8px);opacity:0;transition:transform .3s var(--ease),opacity .3s}
+.toast.in{transform:none;opacity:1}
+.toast b{display:block;font-size:14px;color:var(--gold)}
+.toast span{display:block;font-size:13px;color:rgba(255,255,255,.85);margin-top:2px}
+.toast small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:6px}
+.empty{padding:30px;text-align:center;color:var(--site-muted);border:1px dashed var(--site-border);border-radius:var(--site-radius)}
+.seg{display:inline-flex;border:1px solid var(--site-border);border-radius:var(--site-radius);overflow:hidden}
+.seg button{border:0;background:#fff;padding:7px 12px;font-size:12.5px;font-weight:700;cursor:pointer;color:var(--site-muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.sticky{position:sticky;bottom:0;background:linear-gradient(transparent,var(--site-bg) 30%);padding:18px 0 4px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+[hidden]{display:none !important}
+@media (max-width:640px){.req{grid-template-columns:1fr}.req .meta{text-align:left}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><small>Owner desk</small>Maria Pyramids House</div>
+  <span class="who" id="who"></span>
+  <a href="./index.html">View the website</a>
+</header>
+
+<main>
+  <section class="panel" id="installPanel" aria-label="Install owner app">
+    <div class="bar"><h2 class="grow">Keep the owner app on your phone</h2><button class="btn btn-gold" type="button" id="installBtn">Install owner app</button></div>
+    <p class="hint" id="installHint" role="status">The app opens this private owner desk. Signing in is still required, and an internet connection is needed.</p>
+    <div id="installInstructions" hidden><p class="hint">iPhone: open this page in Safari, tap Share, then Add to Home Screen. Android: open it in Chrome and choose Install app or Add to Home screen from the browser menu.</p></div>
+  </section>
+  <div id="loading" class="gate panel" role="status">Checking your account…</div>
+
+  <section id="signin" class="gate panel" hidden>
+    <h1>Owner sign in</h1>
+    <p>This desk is only for the owner of Maria Pyramids House. Sign in with the owner's email to change prices, tours and what Maria knows.</p>
+    <form id="signinForm">
+      <label class="f">Email<input id="signinEmail" type="email" autocomplete="username" required></label>
+      <label class="f">Password<input id="signinPassword" type="password" autocomplete="current-password" required></label>
+      <div class="bar" style="margin-top:14px"><button class="btn btn-gold" type="submit">Sign in</button><span class="status" id="signinStatus" role="status"></span></div>
+    </form>
+    <p class="hint" style="margin-top:14px"><a class="btn" href="./index.html">Back to the website</a></p>
+  </section>
+
+  <section id="claim" class="gate panel" hidden>
+    <h1>Unlock the owner desk</h1>
+    <p>Enter the one-time owner code. After this, only your account can open this desk.</p>
+    <form id="claimForm">
+      <label class="f">Owner code<input id="claimCode" autocomplete="one-time-code" required placeholder="The private owner code"></label>
+      <div class="bar" style="margin-top:14px"><button class="btn btn-gold" type="submit">Unlock</button><span class="status" id="claimStatus" role="status"></span></div>
+    </form>
+  </section>
+
+  <section id="denied" class="gate panel" hidden>
+    <h1>Not the owner account</h1>
+    <p>You are signed in, but this account is not the owner of Maria Pyramids House. Sign out, then sign in with the owner's account to use this desk.</p>
+    <p class="hint"><button class="btn btn-gold" type="button" id="signoutBtn">Sign out</button> <a class="btn" href="./index.html">Back to the website</a></p>
+  </section>
+
+  <section id="failed" class="gate panel" hidden>
+    <h1>The desk could not load</h1>
+    <p id="failedText">The service did not respond. Check your connection and try again.</p>
+    <button class="btn btn-gold" type="button" id="retryBtn">Try again</button>
+  </section>
+
+  <section id="desk" hidden>
+    <h1>Owner desk</h1>
+    <p class="lead">Anything you save here appears on the website and in Maria's answers straight away.</p>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <div id="view"></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var API = 'https://khmahmnedzxfkngrkvjw.supabase.co/functions/v1/app/api';
+  var SUPABASE_URL = 'https://khmahmnedzxfkngrkvjw.supabase.co';
+  var ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtobWFobW5lZHp4ZmtuZ3Jrdmp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ2MDU0MjgsImV4cCI6MjExMDE4MTQyOH0.RJLou8FmsA8UnIU-LFFIB0MViy4njtKX15_PBPgwMEk';
+  var AUTH_KEY = 'mph_owner_auth';
+  var ROOM_NAMES = ['Deluxe Double or Twin Room with Mountain View', 'Junior Suite', 'Superior King Room', 'Standard Double or Twin Room'];
+  // The tours the website shows today. They pre-fill the Tours tab the first time so the
+  // owner can edit, reprice, reorder, hide or remove them, and add new ones.
+  var DEFAULT_TOURS = [
+    { id: 'giza', name: 'Pyramids of Giza', cat: 'Pyramids & Giza', len: 'Half day', summary: 'Walk the Giza Plateau with a private guide and stand in front of the Pyramids and the Sphinx. Sunrise and morning starts are both possible.', highlights: ['Giza Plateau, the Pyramids and the Sphinx', 'The Valley Temple on the plateau', 'Sunrise or morning start'], includes: ['Private air-conditioned vehicle for all transfers', 'Private guide, all languages', 'Entrance fees to the sites mentioned', 'Traditional Egyptian lunch — grilled meats and chicken'], price: null, active: true },
+    { id: 'saqqara', name: 'Pyramids of Giza, Saqqara & Memphis', cat: 'Pyramids & Giza', len: 'Full day', summary: 'Three ancient capitals in one day: the Giza Plateau, the first pyramid at Saqqara and the colossus of Ramses II at Memphis. Dahshur can be added.', highlights: ['Giza Plateau, Pyramids and Sphinx', 'Saqqara and the Step Pyramid', 'The statue of Ramses II in Memphis'], includes: ['Private air-conditioned vehicle for all transfers', 'Private guide, all languages', 'Entrance fees to the sites mentioned', 'Traditional Egyptian lunch — grilled meats and chicken'], price: null, active: true },
+    { id: 'gem', name: 'Grand Egyptian Museum', cat: 'Museums & Old Cairo', len: 'Half day', summary: 'A guided visit to the new museum beside the Pyramids, with an Egyptologist at your side through the galleries and treasures.', highlights: ['The Grand Egyptian Museum', 'Golden statues and treasures of ancient Egypt'], includes: ['Private air-conditioned vehicle for all transfers', 'Private Egyptologist guide, all languages', 'Entrance fees', 'Traditional Egyptian lunch — grilled meats'], price: null, active: true },
+    { id: 'oldcairo', name: 'Egyptian Museum, Citadel & Old Cairo', cat: 'Museums & Old Cairo', len: 'Full day', summary: 'Choose the Egyptian Museum in Cairo or the Museum of Civilization, then climb to Saladin\u2019s Citadel and wander through Old Cairo.', highlights: ['The Egyptian Museum or the Museum of Civilization', 'Mohamed Ali Mosque and the Citadel of Saladin', 'The Hanging Church in Coptic Cairo'], includes: ['Private air-conditioned vehicle for all transfers', 'Private Egyptologist guide, all languages', 'Entrance fees', 'Traditional Egyptian lunch — grilled meats'], price: null, active: true },
+    { id: 'nile', name: 'Nile Dinner Cruise', cat: 'Evenings', len: 'About 2 hours', summary: 'Spend a night on the Nile aboard a five-star cruise boat: about two hours on the water, dinner from the chef\u2019s menu and live shows.', highlights: ['Two-hour Nile cruise with dinner on board', 'Tannoura and belly-dancer show', 'Western music and folklore'], includes: ['Private air-conditioned vehicle for all transfers', 'Nile cruise of about two hours', 'All service charges and taxes'], price: null, active: true },
+    { id: 'ride', name: 'Quad Bike, Camel & Horse Riding at the Pyramids', cat: 'Pyramids & Giza', len: '2 hours or half day', summary: 'Two ways to see the Pyramids from the desert floor, both starting close to the hotel: a half-day quad-bike excursion, or a two-hour camel or horse ride at sunrise or sunset.', highlights: ['Quad bike: half day around the Pyramids', 'Camel or horse: two hours near the Sphinx', 'Sunrise or sunset departures'], includes: ['Private air-conditioned vehicle for all transfers', 'Your chosen ride and guide'], price: null, active: true },
+    { id: 'night', name: 'Cairo by Night', cat: 'Evenings', len: 'Evening', summary: 'Cairo after dark, from the lanterns of the old bazaar to the lit-up streets of downtown, with a koshari meal.', highlights: ['Downtown Cairo', 'Khan El Khalili Bazaar', 'Al-Muizz Street and the City of the Dead'], includes: ['Private air-conditioned vehicle for all transfers', 'Private Egyptologist guide, all languages', 'Entrance fees', 'Traditional Egyptian meal: koshari'], price: null, active: true },
+    { id: 'alexandria', name: 'Alexandria Tour', cat: 'Beyond Cairo', len: 'Full day', summary: 'The Mediterranean city of Alexander, with its fort on the harbour, Roman remains and the modern library.', highlights: ['Citadel of Qaitbay', 'Pompey\u2019s Pillar', 'Catacombs of Kom El Shoqafa', 'Library of Alexandria'], includes: ['Private air-conditioned vehicle for all transfers', 'Private Egyptologist guide, all languages', 'Entrance fees', 'Traditional Egyptian lunch: fish'], price: null, active: true },
+    { id: 'fayoum', name: 'El Fayoum Oasis Day Tour', cat: 'Beyond Cairo', len: 'About 12 hours', summary: 'A private guided day trip from Cairo to the lakes, dunes and waterfalls of El Fayoum.', highlights: ['Wadi Hitan, the Valley of the Whales', 'Wadi El Rayan waterfalls', 'Mudawara Mountain'], includes: ['Private guide', '4x4 transfers inside Fayoum', 'Traditional Egyptian meal'], price: null, active: true },
+    { id: 'desert', name: 'Bahariya Oasis & White Desert', cat: 'Beyond Cairo', len: '2 days, 1 night', summary: 'Two days and one night in the Western Desert, with a camp under the stars between the Black and White Deserts.', highlights: ['Day 1: Bahariya, the Black and White Deserts, the hot spring, Crystal Mountain and the Valley of Agabat', 'Night in a desert camp under the stars', 'Day 2: the Golden Mummies, nobles\u2019 tombs and the Black Mountain'], includes: ['Hotel pick-up and return', 'Private air-conditioned vehicle and 4x4 in the desert', 'One night in a desert camp', '1 breakfast, 2 lunches, 1 dinner and bottled water', 'Desert expert, entrance fees and taxes'], price: null, active: true }
+  ];
+  var TABS = [
+    { id: 'requests', label: 'Guest requests' },
+    { id: 'rooms', label: 'Rooms & prices' },
+    { id: 'tours', label: 'Tours' },
+    { id: 'notes', label: "Maria's notes" },
+    { id: 'general', label: 'General' }
+  ];
+  var MESSAGES = {
+    write_conflict: 'This was changed somewhere else since you opened it. Reload to see the latest version, then make your change again.',
+    invalid_input: 'Some fields are not valid. Prices must be numbers of 0 or more, and names cannot be empty.',
+    payload_too_large: 'This section is too long to save. Remove a few items and try again.',
+    invalid_code: 'That code is not right, or it has already been used.',
+    not_owner: 'This account is not the owner account.',
+    network_error: 'The request did not reach the server. Check your connection, then reload to see if it was saved.'
+  };
+
+  var state = { tab: 'requests', sections: {}, drafts: {}, requests: [], filter: 'new', timer: null, known: {}, booted: false };
+  var $ = function (s) { return document.querySelector(s); };
+  var installPrompt = null;
+  var standalone = window.matchMedia('(display-mode: standalone)');
+  function updateInstallPanel() { $('#installPanel').hidden = standalone.matches || navigator.standalone === true; }
+  updateInstallPanel();
+  standalone.addEventListener('change', updateInstallPanel);
+  window.addEventListener('beforeinstallprompt', function (event) {
+    event.preventDefault();
+    installPrompt = event;
+  });
+  window.addEventListener('appinstalled', function () {
+    installPrompt = null;
+    $('#installPanel').hidden = true;
+  });
+  $('#installBtn').addEventListener('click', async function () {
+    if (!installPrompt) { $('#installInstructions').hidden = false; return; }
+    var prompt = installPrompt;
+    installPrompt = null;
+    $('#installBtn').disabled = true;
+    try {
+      await prompt.prompt();
+      var choice = await prompt.userChoice;
+      $('#installHint').textContent = choice.outcome === 'accepted' ? 'Installation accepted. Once installed, open Maria Owner from your home screen.' : 'Installation cancelled. You can still use this page in your browser.';
+    } finally { $('#installBtn').disabled = false; }
+  });
+  if ('serviceWorker' in navigator && window.isSecureContext) {
+    navigator.serviceWorker.register('owner-sw.js', { scope: './owner.html' }).catch(function () {
+      $('#installHint').textContent = 'App setup could not complete. You can still use this desk in your browser.';
+    });
+  }
+
+  function ApiError(code, status) { this.code = code; this.status = status || 0; }
+
+  function readAuth() { try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || null; } catch (e) { return null; } }
+  function writeAuth(v) { try { if (v) localStorage.setItem(AUTH_KEY, JSON.stringify(v)); else localStorage.removeItem(AUTH_KEY); } catch (e) {} }
+
+  function authGrant(path, body) {
+    return fetch(SUPABASE_URL + path, {
+      method: 'POST',
+      headers: { apikey: ANON_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+    }).catch(function () { return { ok: false, data: {} }; });
+  }
+
+  function saveSession(d) {
+    writeAuth({ access_token: d.access_token, refresh_token: d.refresh_token, expires_at: Date.now() + (d.expires_in || 3600) * 1000 });
+  }
+
+  function signIn(email, password) {
+    return authGrant('/auth/v1/token?grant_type=password', { email: email, password: password }).then(function (r) {
+      if (!r.ok || !r.data.access_token) throw new ApiError('bad_credentials');
+      saveSession(r.data);
+    });
+  }
+
+  function signOut() { writeAuth(null); show('signin'); }
+
+  function refreshAuth() {
+    var a = readAuth();
+    if (!a || !a.refresh_token) return Promise.resolve(false);
+    return authGrant('/auth/v1/token?grant_type=refresh_token', { refresh_token: a.refresh_token }).then(function (r) {
+      if (!r.ok || !r.data.access_token) { writeAuth(null); return false; }
+      saveSession(r.data);
+      return true;
+    });
+  }
+
+  function validAuth() {
+    var a = readAuth();
+    if (!a || !a.access_token) return Promise.resolve(false);
+    if (a.expires_at && a.expires_at - Date.now() > 60000) return Promise.resolve(true);
+    return refreshAuth();
+  }
+
+  function api(path, init, retried) {
+    init = init || {};
+    var headers = { Accept: 'application/json' };
+    if (init.body) headers['Content-Type'] = 'application/json';
+    var a = readAuth();
+    if (a && a.access_token) headers['Authorization'] = 'Bearer ' + a.access_token;
+    return fetch(API + path, { method: init.method || 'GET', headers: headers, body: init.body ? JSON.stringify(init.body) : undefined, credentials: 'omit' })
+      .catch(function () { throw new ApiError('network_error'); })
+      .then(function (res) {
+        if (res.status === 401) {
+          if (retried) { writeAuth(null); throw new ApiError('login_required', 401); }
+          return refreshAuth().then(function (ok) {
+            if (!ok) throw new ApiError('login_required', 401);
+            return api(path, init, true);
+          });
+        }
+        var type = res.headers.get('content-type') || '';
+        if (res.redirected || type.indexOf('application/json') === -1) throw new ApiError(res.status === 403 ? 'access_denied' : 'invalid_response', res.status);
+        return res.json().catch(function () { throw new ApiError('invalid_response', res.status); }).then(function (data) {
+          if (!res.ok) throw new ApiError(data && typeof data.error === 'string' ? data.error : (res.status === 403 ? 'access_denied' : 'request_failed'), res.status);
+          return data;
+        });
+      });
+  }
+
+  function message(err) {
+    if (err && MESSAGES[err.code]) return MESSAGES[err.code];
+    if (err && err.status >= 500) return 'The server could not finish this. Reload to check whether it was saved before trying again.';
+    return 'Something went wrong. Reload and check before trying again.';
+  }
+
+  function show(id) {
+    ['loading', 'signin', 'claim', 'denied', 'failed', 'desk'].forEach(function (x) { $('#' + x).hidden = x !== id; });
+  }
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === 'text') n.textContent = attrs[k];
+      else if (k === 'on') Object.keys(attrs.on).forEach(function (e) { n.addEventListener(e, attrs.on[e]); });
+      else if (attrs[k] === true) n.setAttribute(k, '');
+      else if (attrs[k] !== false && attrs[k] != null) n.setAttribute(k, attrs[k]);
+    });
+    (kids || []).forEach(function (c) { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return n;
+  }
+
+  function boot() {
+    show('loading');
+    validAuth().then(function (ok) {
+      if (!ok) { show('signin'); return null; }
+      return api('/owner/me').then(function (me) {
+        $('#who').textContent = me.name ? 'Signed in as ' + me.name : 'Signed in';
+        if (me.isOwner) return loadDesk();
+        show(me.claimable ? 'claim' : 'denied');
+      });
+    }).catch(function (err) {
+      if (err.code === 'login_required') { show('signin'); return; }
+      $('#failedText').textContent = message(err);
+      show('failed');
+    });
+  }
+
+  $('#retryBtn').addEventListener('click', boot);
+  $('#signoutBtn').addEventListener('click', signOut);
+
+  $('#signinForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = e.submitter || $('#signinForm button');
+    var status = $('#signinStatus');
+    btn.disabled = true; status.className = 'status'; status.textContent = 'Signing in…';
+    signIn($('#signinEmail').value.trim(), $('#signinPassword').value).then(function () {
+      boot();
+    }).catch(function () {
+      status.className = 'status bad'; status.textContent = 'That email or password is not right.';
+    }).then(function () { btn.disabled = false; });
+  });
+
+  $('#claimForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = e.submitter || $('#claimForm button');
+    var status = $('#claimStatus');
+    btn.disabled = true; status.className = 'status'; status.textContent = 'Checking…';
+    api('/owner/claim', { method: 'POST', body: { code: $('#claimCode').value } }).then(function () {
+      loadDesk();
+    }).catch(function (err) {
+      if (err.code === 'login_required') { show('signin'); return; }
+      status.className = 'status bad'; status.textContent = message(err);
+    }).then(function () { btn.disabled = false; });
+  });
+
+  function loadDesk() {
+    return Promise.all([api('/content'), api('/owner/requests')]).then(function (res) {
+      state.sections = res[0].sections || {};
+      state.requests = res[1].requests || [];
+      state.drafts = {};
+      state.requests.forEach(function (r) { state.known[r.id] = true; });
+      state.booted = true;
+      show('desk');
+      renderTabs();
+      render();
+      clearInterval(state.timer);
+      state.timer = setInterval(refreshRequests, 30000);
+      notifyCount();
+    }).catch(function (err) {
+      if (err.code === 'login_required') { show('signin'); return; }
+      if (err.code === 'not_owner') { show('denied'); return; }
+      $('#failedText').textContent = message(err);
+      show('failed');
+    });
+  }
+
+  function refreshRequests() {
+    if (document.hidden) return;
+    return api('/owner/requests').then(function (r) {
+      var fresh = [];
+      (r.requests || []).forEach(function (x) {
+        if (state.booted && !state.known[x.id] && x.status === 'new') fresh.push(x);
+        state.known[x.id] = true;
+      });
+      state.requests = r.requests || [];
+      renderTabs();
+      if (state.tab === 'requests') render();
+      fresh.forEach(notifyNew);
+      notifyCount();
+    }).catch(function () {});
+  }
+
+  /* ---------- notifications for new guest requests ---------- */
+  var toastWrap = null;
+  function ensureToasts() {
+    if (toastWrap) return toastWrap;
+    toastWrap = el('div', { class: 'toast-wrap', 'aria-live': 'polite' });
+    document.body.appendChild(toastWrap);
+    return toastWrap;
+  }
+  function chime() {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      var ctx = new AC();
+      var t = ctx.currentTime;
+      [880, 1174.7].forEach(function (f, i) {
+        var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t + i * 0.16);
+        g.gain.exponentialRampToValueAtTime(0.12, t + i * 0.16 + 0.03);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.16 + 0.3);
+        o.connect(g); g.connect(ctx.destination);
+        o.start(t + i * 0.16); o.stop(t + i * 0.16 + 0.32);
+      });
+      setTimeout(function () { ctx.close().catch(function () {}); }, 900);
+    } catch (e) {}
+  }
+  function notifyNew(r) {
+    chime();
+    var kind = r.kind === 'tour' ? 'tour request' : r.kind === 'question' ? 'question' : 'booking request';
+    var title = 'New ' + kind;
+    var body = [r.guest_name, r.item].filter(Boolean).join(' · ');
+    if (document.hidden && 'Notification' in window && Notification.permission === 'granted') {
+      try {
+        var n = new Notification(title + ' — Maria Pyramids House', { body: body, tag: r.id, icon: 'assets/owner-icon-192.png' });
+        n.addEventListener('click', function () { try { n.close(); } catch (e) {} window.focus(); state.tab = 'requests'; state.filter = 'new'; renderTabs(); render(); });
+      } catch (e) {}
+    }
+    var t = el('div', { class: 'toast', role: 'status' }, [
+      el('b', { text: title }),
+      el('span', { text: body }),
+      el('small', { text: 'Tap to open the guest requests' })
+    ]);
+    t.addEventListener('click', function () { state.tab = 'requests'; state.filter = 'new'; renderTabs(); render(); t.remove(); });
+    ensureToasts().appendChild(t);
+    requestAnimationFrame(function () { t.classList.add('in'); });
+    setTimeout(function () { t.classList.remove('in'); setTimeout(function () { t.remove(); }, 350); }, 8000);
+  }
+  function notifyCount() {
+    var fresh = state.requests.filter(function (r) { return r.status === 'new'; }).length;
+    document.title = (fresh ? '(' + fresh + ') ' : '') + 'Owner desk · Maria Pyramids House';
+  }
+  function setupNotifyButton(bar) {
+    if (!('Notification' in window)) return null;
+    if (Notification.permission !== 'default') return null;
+    var btn = el('button', { class: 'btn btn-sm', type: 'button' }, ['Enable notifications']);
+    btn.addEventListener('click', function () {
+      btn.disabled = true;
+      Notification.requestPermission().then(function (p) {
+        if (p === 'granted') {
+          try { new Notification('Notifications are on', { body: 'You will hear a chime and get a message when a guest sends a new request.', icon: 'assets/owner-icon-192.png' }); } catch (e) {}
+        }
+        btn.remove();
+      }).catch(function () { btn.disabled = false; });
+    });
+    return btn;
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && state.booted) refreshRequests();
+  });
+
+  function renderTabs() {
+    var nav = $('#tabs'); nav.innerHTML = '';
+    var fresh = state.requests.filter(function (r) { return r.status === 'new'; }).length;
+    TABS.forEach(function (t) {
+      var b = el('button', { type: 'button', role: 'tab', 'aria-selected': String(state.tab === t.id), on: { click: function () { state.tab = t.id; renderTabs(); render(); } } }, [t.label]);
+      if (t.id === 'requests' && fresh) b.appendChild(el('span', { class: 'count', text: String(fresh) }));
+      nav.appendChild(b);
+    });
+    notifyCount();
+  }
+
+  function render() {
+    var v = $('#view'); v.innerHTML = '';
+    if (state.tab === 'requests') return renderRequests(v);
+    renderSection(v, state.tab);
+  }
+
+  /* ---------- Guest requests ---------- */
+  function renderRequests(v) {
+    var seg = el('div', { class: 'seg', role: 'group', 'aria-label': 'Show' });
+    [['new', 'New'], ['done', 'Done'], ['cancelled', 'Cancelled'], ['all', 'All']].forEach(function (f) {
+      seg.appendChild(el('button', { type: 'button', 'aria-pressed': String(state.filter === f[0]), on: { click: function () { state.filter = f[0]; render(); } } }, [f[1]]));
+    });
+    var barKids = [
+      el('div', { class: 'grow' }, [el('h2', { text: 'Guest requests' }), el('p', { class: 'hint', text: 'Requests guests send through Maria and the booking form. This list refreshes every 30 seconds, and you get a chime and a toast when a new one arrives.' })]),
+      seg,
+      el('button', { class: 'btn btn-sm', type: 'button', on: { click: function () { refreshRequests(); } } }, ['Refresh'])
+    ];
+    var nb = setupNotifyButton();
+    if (nb) barKids.push(nb);
+    v.appendChild(el('div', { class: 'bar' }, barKids));
+    var list = state.requests.filter(function (r) { return state.filter === 'all' || r.status === state.filter; });
+    if (!list.length) {
+      v.appendChild(el('div', { class: 'empty', text: state.filter === 'new' ? 'No new requests. New ones show up here as soon as a guest sends them.' : 'Nothing here yet.' }));
+      return;
+    }
+    var wrap = el('div', { class: 'items' });
+    list.forEach(function (r) {
+      var title = r.item || (r.kind === 'booking' ? 'Booking request' : 'Request');
+      var who = [r.guest_name, r.room ? 'Room ' + r.room : ''].filter(Boolean).join(' · ');
+      var status = el('span', { class: 'status', role: 'status' });
+      var kids = [el('span', { class: 'kind ' + r.kind, text: r.kind })];
+      if (r.status === 'cancelled') kids.push(el('span', { class: 'kind cancelled', text: 'cancelled by guest' }));
+      var body = [el('h3', { text: title }), who ? el('p', { text: who }) : null, r.details ? el('p', { text: r.details }) : null];
+      var patch = function (to, btn) {
+        btn.disabled = true;
+        api('/owner/requests/' + r.id, { method: 'PATCH', body: { status: to, from: r.status } }).then(function (u) {
+          r.status = u.status; renderTabs(); render();
+        }).catch(function (err) {
+          status.className = 'status bad'; status.textContent = message(err); btn.disabled = false;
+          if (err.code === 'write_conflict') refreshRequests();
+        });
+      };
+      var actions = [];
+      if (r.status === 'new') {
+        var doneBtn = el('button', { class: 'btn btn-sm btn-gold', type: 'button' }, ['Mark done']);
+        doneBtn.addEventListener('click', function () { patch('done', doneBtn); });
+        var cancelBtn = el('button', { class: 'btn btn-sm', type: 'button' }, ['Cancel']);
+        cancelBtn.addEventListener('click', function () { patch('cancelled', cancelBtn); });
+        actions.push(doneBtn, cancelBtn);
+      }
+      if (r.status === 'done') {
+        var reopenBtn = el('button', { class: 'btn btn-sm', type: 'button' }, ['Reopen']);
+        reopenBtn.addEventListener('click', function () { patch('new', reopenBtn); });
+        actions.push(reopenBtn);
+      }
+      var removeBtn = el('button', { class: 'btn btn-x btn-sm', type: 'button' }, ['Remove']);
+      removeBtn.addEventListener('click', function () {
+        if (!confirm('Remove this request from the list completely?')) return;
+        patch('removed', removeBtn);
+      });
+      actions.push(removeBtn);
+      var actWrap = el('div', { style: 'margin-top:8px;display:flex;gap:8px;flex-wrap:wrap' }, actions);
+      if (r.status === 'cancelled') {
+        var guestCancelled = (r.details || '').indexOf('[Cancelled by the guest from the website]') !== -1;
+        body.push(el('p', { class: 'status', text: guestCancelled ? 'The guest cancelled this request from the website.' : 'Cancelled by the owner.' }));
+      }
+      body.push(status);
+      kids.push(el('div', {}, body));
+      kids.push(el('div', { class: 'meta' }, [el('div', { text: when(r.created_at) }), actWrap]));
+      wrap.appendChild(el('article', { class: 'item req' + (r.status === 'done' ? ' done' : '') + (r.status === 'cancelled' ? ' cancelled' : '') }, kids));
+    });
+    v.appendChild(wrap);
+  }
+
+  function when(iso) {
+    var d = new Date(iso);
+    if (isNaN(d)) return '';
+    return d.toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  }
+
+  /* ---------- Editable sections ---------- */
+  var DEFS = {
+    rooms: {
+      title: 'Rooms & prices', hint: 'Set the nightly price for each room. Leave the price empty and Maria says the team confirms the rate on WhatsApp.',
+      fixed: true,
+      blank: function (i) { return { i: i, price: null, note: '', available: true }; },
+      head: function (x) { return ROOM_NAMES[x.i] || 'Room'; },
+      fields: [['price', 'Price per night', 'num'], ['available', 'Open for booking', 'bool'], ['note', 'Extra note for guests (offers, minimum nights…)', 'area']]
+    },
+    tours: {
+      title: 'Tours', hint: 'Add, change or remove tours. Leave the price empty and Maria says the team confirms the rate on WhatsApp. Hidden tours stay saved but the website stops offering them.',
+      seed: DEFAULT_TOURS,
+      blank: function () { return { id: 't' + Date.now().toString(36), name: '', cat: 'Pyramids & Giza', len: '', summary: '', highlights: [], includes: [], price: null, active: true }; },
+      head: function (x) { return x.name || 'New tour'; },
+      add: 'Add a tour',
+      fields: [['name', 'Tour name', 'text', true], ['cat', 'Group', 'select', false, ['Pyramids & Giza', 'Museums & Old Cairo', 'Evenings', 'Beyond Cairo']], ['len', 'Length (e.g. Half day)', 'text'], ['price', 'Price per person', 'num'], ['active', 'Show this tour', 'bool'], ['summary', 'Short description', 'area'], ['highlights', 'Highlights — one per line', 'list'], ['includes', 'Included — one per line', 'list']]
+    },
+    notes: {
+      title: "Maria's notes", hint: 'Teach Maria anything: write a question guests ask and the answer you want her to give. She uses these first.',
+      blank: function () { return { q: '', a: '' }; },
+      head: function (x) { return x.q || 'New note'; },
+      add: 'Add a note',
+      fields: [['q', 'When a guest asks…', 'text', true], ['a', 'Maria answers…', 'area', true]]
+    },
+    general: {
+      title: 'General', hint: 'Settings used across the website and by Maria.',
+      single: true,
+      blank: function () { return { currency: 'USD', breakfast: '', announcement: '' }; },
+      fields: [['currency', 'Currency for all prices (e.g. EGP, USD)', 'text'], ['breakfast', 'Breakfast details Maria gives', 'area'], ['announcement', 'Announcement Maria shares when a chat starts (leave empty for none)', 'area']]
+    }
+  };
+
+  function draft(key) {
+    if (!state.drafts[key]) {
+      var saved = state.sections[key];
+      var def = DEFS[key];
+      var value = saved ? JSON.parse(JSON.stringify(saved.value)) : (def.single ? def.blank() : (def.seed ? JSON.parse(JSON.stringify(def.seed)) : []));
+      if (def.fixed) {
+        var byI = {};
+        (value || []).forEach(function (x) { byI[x.i] = x; });
+        value = ROOM_NAMES.map(function (_, i) { return byI[i] || def.blank(i); });
+      }
+      state.drafts[key] = { value: value, version: saved ? saved.version : 0, dirty: false };
+    }
+    return state.drafts[key];
+  }
+
+  function input(def, obj, f, d) {
+    var key = f[0], label = f[1], type = f[2];
+    var mark = function () { d.dirty = true; };
+    if (type === 'bool') {
+      var c = el('input', { type: 'checkbox' }); c.checked = obj[key] !== false;
+      c.addEventListener('change', function () { obj[key] = c.checked; mark(); });
+      return el('label', { class: 'chk' }, [c, label]);
+    }
+    var ctl;
+    if (type === 'area' || type === 'list') {
+      ctl = el('textarea', { required: !!f[3] });
+      ctl.value = type === 'list' ? (obj[key] || []).join('\n') : (obj[key] || '');
+    } else if (type === 'select') {
+      ctl = el('select');
+      var opts = f[4].slice(); if (obj[key] && opts.indexOf(obj[key]) === -1) opts.push(obj[key]);
+      opts.forEach(function (o) { var op = el('option', { value: o, text: o }); if (o === obj[key]) op.selected = true; ctl.appendChild(op); });
+    } else {
+      ctl = el('input', { type: type === 'num' ? 'number' : 'text', min: type === 'num' ? '0' : null, step: type === 'num' ? 'any' : null, inputmode: type === 'num' ? 'decimal' : null, required: !!f[3] });
+      ctl.value = obj[key] == null ? '' : obj[key];
+    }
+    ctl.addEventListener('input', function () {
+      if (type === 'list') obj[key] = ctl.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+      else if (type === 'num') obj[key] = ctl.value === '' ? null : Number(ctl.value);
+      else obj[key] = ctl.value;
+      mark();
+    });
+    ctl.addEventListener('change', function () { if (type === 'select') { obj[key] = ctl.value; mark(); } });
+    return el('label', { class: 'f' + (type === 'area' || type === 'list' ? ' wide' : '') }, [label, ctl]);
+  }
+
+  function renderSection(v, key) {
+    var def = DEFS[key], d = draft(key);
+    var cur = (state.sections.general && state.sections.general.value.currency) || 'USD';
+    v.appendChild(el('div', { class: 'bar' }, [el('div', { class: 'grow' }, [el('h2', { text: def.title }), el('p', { class: 'hint', text: def.hint + (key !== 'general' && key !== 'notes' ? ' Prices are in ' + cur + '.' : '') })])]));
+
+    var wrap = el('div', { class: 'items' });
+    var list = def.single ? [d.value] : d.value;
+    if (!list.length) wrap.appendChild(el('div', { class: 'empty', text: 'Nothing here yet. Use the button below to add the first one.' }));
+    list.forEach(function (obj, idx) {
+      var grid = el('div', { class: 'grid' }, def.fields.map(function (f) { return input(def, obj, f, d); }));
+      var head = null;
+      if (!def.single) {
+        var kids = [el('b', { text: def.head(obj) })];
+        if (!def.fixed) {
+          kids.push(el('button', { class: 'btn btn-sm', type: 'button', disabled: idx === 0, 'aria-label': 'Move up', on: { click: function () { var t = d.value[idx - 1]; d.value[idx - 1] = obj; d.value[idx] = t; d.dirty = true; render(); } } }, ['↑']));
+          kids.push(el('button', { class: 'btn btn-x btn-sm', type: 'button', on: { click: function () { if (confirm('Remove "' + def.head(obj) + '"?')) { d.value.splice(idx, 1); d.dirty = true; render(); } } } }, ['Remove']));
+        }
+        head = el('div', { class: 'item-h' }, kids);
+      }
+      wrap.appendChild(el('div', { class: 'item' }, [head, grid]));
+    });
+    v.appendChild(wrap);
+
+    var status = el('span', { class: 'status', role: 'status' });
+    var save = el('button', { class: 'btn btn-gold', type: 'button' }, ['Save ' + def.title.toLowerCase()]);
+    var reload = el('button', { class: 'btn', type: 'button', hidden: true }, ['Reload latest']);
+    save.addEventListener('click', function () {
+      var bad = v.querySelector('input:invalid, textarea:invalid');
+      if (bad) { bad.focus(); status.className = 'status bad'; status.textContent = 'Fill in the highlighted field first.'; return; }
+      save.disabled = true; status.className = 'status'; status.textContent = 'Saving…';
+      api('/owner/content/' + key, { method: 'PUT', body: { version: d.version, value: d.value } }).then(function (res) {
+        state.sections[key] = { value: res.value, version: res.version, updated_at: res.updated_at };
+        d.version = res.version; d.value = JSON.parse(JSON.stringify(res.value)); d.dirty = false;
+        status.className = 'status ok'; status.textContent = 'Saved. The website and Maria now use this.';
+      }).catch(function (err) {
+        if (err.code === 'login_required') { show('signin'); return; }
+        status.className = 'status bad'; status.textContent = message(err);
+        if (err.code === 'write_conflict' || err.code === 'network_error' || err.status >= 500) reload.hidden = false;
+      }).then(function () { save.disabled = false; });
+    });
+    reload.addEventListener('click', function () {
+      if (d.dirty && !confirm('Reloading replaces your unsaved changes on this tab. Continue?')) return;
+      api('/content').then(function (r) { state.sections = r.sections || {}; delete state.drafts[key]; render(); })
+        .catch(function (err) { status.className = 'status bad'; status.textContent = message(err); });
+    });
+    var foot = [];
+    if (def.add) foot.push(el('button', { class: 'btn', type: 'button', on: { click: function () { d.value.push(def.blank()); d.dirty = true; render(); var all = v.querySelectorAll('.item'); var last = all[all.length - 1]; if (last) { last.scrollIntoView({ block: 'center' }); var i = last.querySelector('input,textarea'); if (i) i.focus({ preventScroll: true }); } } } }, ['+ ' + def.add]));
+    foot.push(save, reload, status);
+    v.appendChild(el('div', { class: 'sticky' }, foot));
+  }
+
+  window.addEventListener('beforeunload', function (e) {
+    var dirty = Object.keys(state.drafts).some(function (k) { return state.drafts[k].dirty; });
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  boot();
+})();
+</script>
+</body>
+</html>
