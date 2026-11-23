@@ -519,6 +519,260 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .mr-cancel{margin-left:auto;border:1px solid #d8a79f;background:#fff;color:#a2402f;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:6px;cursor:pointer;transition:background .2s}
 .mr-cancel:hover{background:#a2402f;color:#fff}
 @media (max-width:900px){.my-reqs{grid-column:1/-1}}
+
+/* ============================================================
+   MAGNIFICENT EDITION — DESKTOP & MOBILE ELEVATION
+   ============================================================ */
+:root{
+  --gold-grad:linear-gradient(135deg,#F0CE87 0%,#D6A24A 52%,#B7822D 100%);
+  --ink-grad:linear-gradient(160deg,#0F254B 0%,#0B1A35 55%,#071124 100%);
+  --shadow-lux:0 28px 70px -28px rgba(11,26,53,.32);
+  --shadow-gold:0 16px 38px -12px rgba(214,162,74,.55);
+}
+[hidden]{display:none!important}
+.book-room-now.is-off{background:var(--gold-grad);color:var(--ink)}
+
+/* Luxe buttons & tactile hover */
+.btn{box-shadow:0 10px 26px -14px rgba(11,26,53,.35)}
+.btn:active{transform:scale(.98)}
+.btn-gold{background:var(--gold-grad);color:var(--ink);box-shadow:var(--shadow-gold)}
+.btn-gold::before{background:#FFF8EA}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 22px 44px -14px rgba(214,162,74,.68)}
+.btn-ghost{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(11,26,53,.28);box-shadow:inset 0 0 0 1px rgba(246,241,232,.48)}
+.btn-ghost:hover{transform:translateY(-2px)}
+.btn-outline-ink{background:transparent;color:var(--ink-2);box-shadow:inset 0 0 0 1.2px rgba(14,33,66,.26)}
+.btn-outline-ink::before{background:var(--ink-2)}
+.btn-outline-ink:hover{color:var(--sand);transform:translateY(-2px)}
+
+/* Navbar glassmorphism + always-ready mobile Book Now */
+.nav.solid{background:rgba(9,22,45,.88);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:0 10px 36px -18px rgba(0,0,0,.55),0 1px 0 rgba(214,162,74,.26)}
+.nav .btn-nav-book{white-space:nowrap}
+.mobile{background:radial-gradient(circle at 82% 16%,rgba(214,162,74,.18),transparent 48%),var(--ink-grad);padding:96px 28px 36px;justify-content:space-between}
+.mobile-links{display:flex;flex-direction:column;gap:4px}
+.mobile-links a{font-family:var(--display);font-size:clamp(30px,8vw,42px);line-height:1.25;padding:6px 0;border-bottom:1px solid rgba(246,241,232,.09);color:var(--sand)}
+.mobile-links a:last-child{border-bottom:0}
+.mobile-foot{display:grid;gap:14px;padding-top:20px;border-top:1px solid rgba(214,162,74,.22);opacity:0;transform:translateY(16px);transition:opacity .5s .22s,transform .5s var(--ease) .22s}
+.menu-open .mobile-foot{opacity:1;transform:none}
+.mobile-foot .btn{width:100%;justify-content:center;height:52px;font-size:13px}
+.mobile-meta{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:13px;color:rgba(246,241,232,.72)}
+.mobile-meta a{font-family:var(--body);font-size:13px;opacity:1;transform:none;color:var(--gold-2)}
+
+/* Hero luxury atmosphere — airy, balanced desktop & mobile */
+.hero{height:auto;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:106px;padding-bottom:clamp(28px,4.5vh,48px);background:var(--ink-grad)}
+.hero::before{background:radial-gradient(circle at 78% 22%,rgba(214,162,74,.14),transparent 42%),linear-gradient(180deg,rgba(7,17,36,.68) 0%,rgba(11,26,53,.14) 34%,rgba(11,26,53,.36) 62%,rgba(7,17,36,.94) 100%)}
+.hero::after{content:"";position:absolute;inset:16px;z-index:2;border:1px solid rgba(214,162,74,.16);border-radius:12px;pointer-events:none}
+.hero-top{position:relative;top:auto;left:auto;right:auto;z-index:2}
+.hero-top .wrap{height:auto;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding-bottom:0;gap:16px}
+.coords{writing-mode:horizontal-tb;padding:9px 16px;border-radius:999px;background:rgba(11,26,53,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(246,241,232,.18);font-size:11px;letter-spacing:.22em;color:rgba(246,241,232,.86)}
+.hero>.wrap{height:auto;padding-bottom:0;margin-top:clamp(56px,12vh,130px)}
+.hero-main{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,410px);align-items:end;gap:clamp(28px,5vw,72px)}
+.hero-copy{display:flex;flex-direction:column;gap:20px;max-width:660px}
+.hero h1{font-size:clamp(52px,6.2vw,96px);letter-spacing:-.02em;line-height:.96;max-width:11ch}
+.hero-copy p{max-width:46ch;font-size:clamp(16px,1.2vw,18.5px);line-height:1.62;color:rgba(246,241,232,.86)}
+.hero-panel{padding:26px;border-radius:16px;background:rgba(9,22,45,.62);backdrop-filter:blur(18px) saturate(130%);-webkit-backdrop-filter:blur(18px) saturate(130%);border:1px solid rgba(214,162,74,.34);box-shadow:0 30px 70px -24px rgba(0,0,0,.6);display:grid;gap:18px}
+.hero-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hero-panel-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2)}
+.hero-panel-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#38d98b;box-shadow:0 0 0 4px rgba(56,217,139,.2)}
+.hero-ctas{display:grid;grid-template-columns:1fr;gap:10px}
+.hero-ctas .btn{width:100%;justify-content:center;height:52px}
+.hero-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:0;background:rgba(246,241,232,.14);border:1px solid rgba(214,162,74,.22);border-radius:10px;overflow:hidden}
+.hero-hl{padding:12px 14px;background:rgba(9,22,45,.52);display:flex;flex-direction:column;gap:2px}
+.hero-hl b{font-family:var(--display);font-weight:400;font-size:19px;color:var(--gold-2);line-height:1.15}
+.hero-hl span{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:rgba(246,241,232,.72);font-weight:600}
+.scroll-cue{display:none}
+
+/* Marquee subtle luxury sheen */
+.marquee{background:var(--gold-grad);box-shadow:0 10px 30px -20px rgba(11,26,53,.4)}
+
+/* About elevation */
+.about{background:radial-gradient(circle at 12% 18%,rgba(214,162,74,.08),transparent 42%),var(--paper)}
+.about-media .m1{box-shadow:var(--shadow-lux);border:1px solid rgba(214,162,74,.22)}
+.about-media .m2{border-radius:10px;border:8px solid var(--paper);box-shadow:0 30px 64px -22px rgba(11,26,53,.42)}
+.seal{box-shadow:0 20px 44px -16px rgba(11,26,53,.55);border:1px solid rgba(214,162,74,.38)}
+
+/* Rooms luxury upgrade */
+.rooms{background:linear-gradient(180deg,var(--sand) 0%,#F2E9DA 100%)}
+.tabs{gap:10px}
+.tab{background:rgba(255,255,255,.55);border-color:rgba(14,33,66,.14);backdrop-filter:blur(6px)}
+.tab[aria-selected=true]{background:var(--ink-2);color:var(--sand);border-color:var(--ink-2);box-shadow:0 12px 28px -14px rgba(11,26,53,.6)}
+.room{border-radius:14px;border:1px solid rgba(214,162,74,.26);box-shadow:var(--shadow-lux)}
+.gallery{touch-action:pan-y}
+.g-count{position:absolute;z-index:2;top:18px;left:18px;padding:6px 12px;border-radius:999px;background:rgba(11,26,53,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(246,241,232,.2);color:var(--sand);font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.room-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:8px}
+.room-actions .btn{margin-top:0;height:50px;padding:0 24px;font-size:13px}
+.room-info .chips li{border:1px solid rgba(14,33,66,.08);background:#F4ECDE}
+
+/* Amenities dark richness */
+.amen{background:radial-gradient(circle at 85% 15%,rgba(214,162,74,.12),transparent 42%),var(--ink-grad)}
+.time{background:rgba(246,241,232,.03);backdrop-filter:blur(8px);border-radius:10px;transition:border-color .35s,transform .35s var(--ease)}
+.time:hover{border-color:var(--gold);transform:translateY(-3px)}
+
+/* Tours upgrade — crisp cards + full mobile readability */
+.tours{background:radial-gradient(circle at 88% 12%,rgba(214,162,74,.09),transparent 40%),var(--paper)}
+.tour{border-radius:14px;border:1px solid rgba(214,162,74,.22);cursor:pointer;box-shadow:0 20px 44px -24px rgba(11,26,53,.45)}
+.tour::after{background:linear-gradient(180deg,rgba(11,26,53,.14) 0%,rgba(11,26,53,.18) 38%,rgba(7,17,36,.94) 100%)}
+.tour .tag{border:1px solid rgba(246,241,232,.18);color:var(--sand)}
+.tour .tprice-badge{position:absolute;z-index:2;top:18px;right:18px;font-size:12px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:999px;background:var(--gold-grad);color:var(--ink);box-shadow:0 8px 20px -8px rgba(0,0,0,.45)}
+.tour .tour-choose{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 18px;border-radius:999px;background:rgba(214,162,74,.18);border:1px solid rgba(214,162,74,.65);color:var(--gold-2);font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s var(--ease)}
+.tour:hover .tour-choose{background:var(--gold);color:var(--ink);transform:translateX(2px)}
+@media (hover:none),(max-width:900px){
+  .tour p{max-height:140px;opacity:.9;margin-top:8px}
+}
+
+/* Reviews polish */
+.reviews{background:linear-gradient(180deg,var(--sand-2) 0%,#E6DBC8 100%)}
+.rating-wall{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.rating-card{border-radius:14px;padding:18px 16px;gap:12px;box-shadow:0 12px 30px -22px rgba(11,26,53,.28)}
+.rating-card .rc-ico{width:42px;height:42px;border-radius:10px}
+.rating-card .rc-ico svg{width:24px;height:24px}
+.rc-score{font-size:1.45rem}
+.rev{border-radius:14px;box-shadow:0 14px 36px -24px rgba(11,26,53,.24)}
+.rev-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+
+/* Booking + Instant Online Card */
+.book{background:radial-gradient(circle at 18% 20%,rgba(214,162,74,.16),transparent 46%),linear-gradient(rgba(8,19,40,.92),rgba(8,19,40,.96)),url("assets/photos/night.jpg") center/cover no-repeat}
+.instant-box{margin-top:32px;padding:24px;border-radius:14px;background:linear-gradient(145deg,rgba(214,162,74,.16),rgba(255,255,255,.04));border:1px solid rgba(214,162,74,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:grid;gap:14px}
+.instant-box .ib-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
+.instant-box .ib-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#38d98b;box-shadow:0 0 0 4px rgba(56,217,139,.2)}
+.instant-box h3{font-size:clamp(24px,2.4vw,30px);color:var(--sand);line-height:1.15}
+.instant-box p{margin:0;font-size:14.5px;color:rgba(246,241,232,.78);max-width:none}
+.instant-box .btn{width:100%;justify-content:center;height:56px}
+.form{border-radius:16px;border:1px solid rgba(214,162,74,.42);box-shadow:0 40px 100px -28px rgba(0,0,0,.6)}
+.form-sub{margin:-8px 0 4px;font-size:14px;color:var(--muted)}
+
+/* Map & Location polish */
+.map{border-radius:14px;border:1px solid rgba(214,162,74,.28);box-shadow:var(--shadow-lux)}
+.map-link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d)}
+.map-link:hover{color:var(--ink-2)}
+
+/* Sent & Tour Modals polish */
+.tq{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tq-card{border-radius:18px;border:1px solid rgba(214,162,74,.45);max-height:min(92vh,800px);gap:11px;padding:clamp(22px,3vw,32px)}
+.tq-card .f-row{align-items:end}
+.tq-card .fld{gap:6px}
+.tq-card .fld input,.tq-card .fld select{height:48px}
+.sent-actions{display:grid;gap:10px;margin-top:6px}
+.sent-actions .btn{height:52px}
+.tq-email-hint{display:block;line-height:1.45;padding:10px 14px;border-radius:8px;background:var(--sand);border:1px solid rgba(214,162,74,.28);font-size:12.5px;color:var(--ink-2)}
+
+/* Maria gold CTA inside chat */
+.m-choices .m-gold{background:var(--gold-grad);border-color:var(--gold);color:var(--ink);padding:9px 18px}
+.m-choices .m-gold:hover{filter:brightness(1.06);color:var(--ink)}
+
+/* Footer richness */
+.foot{background:radial-gradient(circle at 80% 0%,rgba(214,162,74,.12),transparent 42%),var(--ink-grad)}
+
+/* ---------- Refined Tablet & Mobile Breakpoints ---------- */
+@media (max-width:1020px){
+  .links{display:none}
+  .nav-r .btn{display:inline-flex;height:40px;padding:0 16px;font-size:11.5px;letter-spacing:.07em}
+  .burger{display:block;width:42px;height:42px}
+  .burger i{left:12px;right:12px}
+  .burger i:first-child{top:17px}.burger i:last-child{top:23px}
+  .menu-open .burger i:first-child,.menu-open .burger i:last-child{top:20px}
+  .hero::after{inset:10px}
+  .hero-main{grid-template-columns:1fr;gap:26px}
+  .hero>.wrap{margin-top:clamp(36px,7vh,72px)}
+  .hero-panel{max-width:520px}
+  .about-media{margin-inline:auto;width:100%}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-bottom:22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;height:44px;padding:0 18px;font-size:13.5px}
+  .rating-wall{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .map{min-height:360px}
+}
+
+@media (max-width:640px){
+  .nav .wrap{height:72px}
+  .nav.solid .wrap{height:64px}
+  .brand-logo{gap:9px}
+  .brand-logo .brand-mark{height:38px;width:38px}
+  .brand-logo .brand-mark svg{width:21px;height:21px}
+  .brand-logo span{font-size:17px}
+  .brand-logo small{font-size:8px;letter-spacing:.24em;margin-top:2px}
+  .nav-r{gap:8px}
+  .nav-r .btn{height:38px;padding:0 13px;font-size:11px;gap:6px}
+  .nav-r .btn .arr{display:none}
+
+  /* Hero mobile: zero overlap, clean vertical flow */
+  .hero{height:auto;min-height:100svh;padding-top:86px;padding-bottom:28px}
+  .hero::after{display:none}
+  .hero-top{margin-bottom:20px}
+  .hero>.wrap{margin-top:16px}
+  .badge{padding:8px 14px 8px 8px;gap:10px}
+  .badge .badge-ico{width:36px;height:36px}
+  .badge .badge-ico svg{width:22px;height:22px}
+  .badge strong{font-size:13px}
+  .badge span{font-size:11.5px}
+  .hero h1{font-size:clamp(42px,13vw,62px);line-height:.96;max-width:none}
+  .hero-copy{gap:14px}
+  .hero-copy p{font-size:15.5px;line-height:1.55}
+  .hero-panel{padding:18px;gap:14px;border-radius:14px}
+  .hero-ctas{grid-template-columns:1fr 1fr;gap:10px}
+  .hero-ctas .btn{padding:0 12px;height:48px;font-size:12px;gap:6px}
+  .hero-hl{padding:10px 12px}
+  .hero-hl b{font-size:16px}
+  .hero-hl span{font-size:9.5px;letter-spacing:.07em}
+
+  /* Sections comfortable mobile rhythm */
+  .about,.rooms,.amen,.tours,.reviews,.book{padding:68px 0}
+  .loc{padding:68px 0 0}
+  .quote{min-height:66vh}
+  .quote .wrap{padding-block:72px}
+  .seal{left:4px;bottom:4%;width:92px;height:92px}
+  .seal b{font-size:22px}
+  .stats{margin-top:48px}
+  .stat{padding:20px 14px 0 0}
+  .stat+.stat{padding-left:14px}
+  .stat:nth-child(3),.stat:nth-child(4){margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+
+  /* Rooms mobile */
+  .room-info{padding:22px 20px 26px;gap:16px}
+  .room-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .room-actions .btn{width:100%;justify-content:center}
+  .g-ctrl{left:12px;right:12px;bottom:12px}
+  .g-arrows button,.zoom{width:40px;height:40px;font-size:16px}
+  .g-count{top:12px;left:12px;font-size:11px;padding:5px 10px}
+  .zoom{top:12px;right:12px}
+
+  /* Tours mobile */
+  .tour{flex:0 0 82vw;aspect-ratio:3/4.1}
+  .tour-body{padding:20px}
+  .tours-nav{display:none}
+
+  /* Ratings 2-column compact wall on mobile */
+  .rating-wall{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px}
+  .rating-card{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
+  .rating-card .rc-ico{width:38px;height:38px;border-radius:10px}
+  .rating-card .rc-ico svg{width:22px;height:22px}
+  .rc-right{align-items:flex-start;flex-direction:row;align-items:baseline;gap:8px;width:100%;justify-content:space-between}
+  .rc-score{font-size:1.35rem}
+  .rating-card:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center}
+  .rating-card:last-child:nth-child(odd) .rc-right{width:auto;flex-direction:column;align-items:flex-end;gap:2px}
+
+  /* Booking mobile */
+  .instant-box{padding:20px;margin-top:24px}
+  .form{padding:22px 18px}
+  .form h3{font-size:26px}
+  .my-reqs{padding:18px}
+
+  /* Footer mobile */
+  .foot{padding:64px 0 96px;margin-top:68px}
+  .foot-cta{padding-bottom:42px}
+  .foot-cta .btn{width:100%;justify-content:center}
+  .foot-grid{grid-template-columns:1fr;gap:32px;padding:40px 0}
+
+  /* Floating buttons mobile: sleek & non-intrusive */
+  .fab{height:50px;width:50px;padding:0;justify-content:center;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .fab .pulse{display:none}
+  .maria-launch{height:50px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:0 15px 0 7px;font-size:12.5px}
+  .maria-launch .m-av{width:36px;height:36px;font-size:18px}
+  .maria{bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+
+  /* Tour modal mobile sheet */
+  .tq{padding:12px;align-items:end}
+  .tq-card{border-radius:20px 20px 14px 14px;max-height:90svh;padding:24px 18px}
+}
 </style>
 <noscript><style>.loader{display:none}.rv,.fade-up{opacity:1;transform:none}.rv-mask{clip-path:none}.rv-mask img,.hero-bg{transform:none}.hero h1 .ln>span,.words .w>span{transform:none}.mobile{display:none}body.locked{overflow:auto}</style></noscript>
 </head>
@@ -609,13 +863,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <a href="#tours">Tours</a><a href="#reviews">Reviews</a><a href="#contact">Find us</a>
 </div>
 <div class="nav-r">
-  <a class="btn btn-gold" href="#booking">Check availability</a>
+  <a class="btn btn-gold btn-nav-book" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
 </div></div></nav>
 
 <div class="mobile" id="mobile">
-  <a href="#about">The house</a><a href="#rooms">Rooms</a><a href="#services">Services</a>
-  <a href="#tours">Tours</a><a href="#reviews">Reviews</a><a href="#booking">Book now</a>
+  <div class="mobile-links">
+    <a href="#about">The house</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#services">Services</a>
+    <a href="#tours">Tours</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#booking">Message front desk</a>
+    <a href="#contact">Find us</a>
+  </div>
+  <div class="mobile-foot">
+    <a class="btn btn-gold" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+    <div class="mobile-meta">
+      <a href="tel:+201070004088">+20 107 000 4088</a>
+      <a href="https://wa.me/201070004088" target="_blank" rel="noopener">WhatsApp 24/7</a>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -630,23 +898,35 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         Pyramid-view guesthouse · Giza
       </span>
     </div>
-    <div class="coords fade-up d1">Giza, Egypt</div>
+    <div class="coords fade-up d1">29.9792° N · Giza, Egypt</div>
   </div></div>
   <div class="wrap">
-    <h1>
-      <span class="ln"><span>Wake up</span></span>
-      <span class="ln"><span>to the</span></span>
-      <span class="ln"><span><em>Pyramids.</em></span></span>
-    </h1>
-    <div class="hero-row">
-      <p class="fade-up d1">Steps from the Great Pyramids: pyramid-view rooms, breakfast on the rooftop terrace and private tours arranged by people who know Giza by heart.</p>
-      <div class="hero-ctas fade-up d2">
-        <a class="btn btn-gold" href="#booking">Check availability <span class="arr">&rarr;</span></a>
-        <a class="btn btn-ghost" href="#rooms">Explore rooms</a>
+    <div class="hero-main">
+      <div class="hero-copy">
+        <h1>
+          <span class="ln"><span>Wake up</span></span>
+          <span class="ln"><span>to the</span></span>
+          <span class="ln"><span><em>Pyramids.</em></span></span>
+        </h1>
+        <p class="fade-up d1">Steps from the Great Pyramids: pyramid-view rooms, breakfast on the rooftop terrace and private tours arranged by people who know Giza by heart.</p>
+      </div>
+      <div class="hero-panel fade-up d2">
+        <div class="hero-panel-head">
+          <span class="hero-panel-tag">Direct Reservations</span>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost" href="#rooms">Explore rooms</a>
+        </div>
+        <div class="hero-highlights">
+          <div class="hero-hl"><b>900 m</b><span>To the Pyramids</span></div>
+          <div class="hero-hl"><b>4.9 &#9733;</b><span>5 Platforms</span></div>
+          <div class="hero-hl"><b>Rooftop</b><span>Daily Breakfast</span></div>
+          <div class="hero-hl"><b>24 / 7</b><span>Concierge</span></div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="scroll-cue"></div>
 </section>
 
 <!-- MARQUEE -->
@@ -728,7 +1008,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="specs"><span>25 m²</span><span>2 singles or 1 large double</span><span>Sleeps 3</span></div>
     <p>A double or twin room with a private entrance, a seating area with a sofa bed, and a window looking out to the mountains and the Pyramids.</p>
     <ul class="chips"><li>Mountain view</li><li>Sofa bed</li><li>Seating area</li><li>Minibar</li><li>Kettle</li><li>Safe</li></ul>
-    <a class="btn btn-ink request-room" href="#booking" data-room="Deluxe Double or Twin Room with Mountain View">Request this room <span class="arr">&rarr;</span></a>
+    <div class="room-actions">
+      <a class="btn btn-gold book-room-now" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline-ink request-room" href="#booking" data-room="Deluxe Double or Twin Room with Mountain View">Ask front desk</a>
+    </div>
   </div>
 </div>
 
@@ -755,7 +1038,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="specs"><span>32 m²</span><span>2 singles + 1 sofa bed</span><span>Sleeps 3</span></div>
     <p>A suite with its own private entrance, one bedroom and a private bathroom with a shower. The balcony looks out to the mountains, with a view of the Pyramids area.</p>
     <ul class="chips"><li>Balcony</li><li>Mountain view</li><li>Seating area</li><li>Sofa bed</li><li>Minibar</li><li>Safe</li></ul>
-    <a class="btn btn-ink request-room" href="#booking" data-room="Junior Suite">Request this room <span class="arr">&rarr;</span></a>
+    <div class="room-actions">
+      <a class="btn btn-gold book-room-now" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline-ink request-room" href="#booking" data-room="Junior Suite">Ask front desk</a>
+    </div>
   </div>
 </div>
 
@@ -782,7 +1068,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="specs"><span>18 m²</span><span>1 extra-large double</span><span>High floor</span></div>
     <p>A double room on a high floor with a private entrance, a seating area and a window looking out to the mountains and the Pyramids.</p>
     <ul class="chips"><li>High floor</li><li>Mountain view</li><li>Seating area</li><li>Minibar</li><li>Kettle</li><li>Safe</li></ul>
-    <a class="btn btn-ink request-room" href="#booking" data-room="Superior King Room">Request this room <span class="arr">&rarr;</span></a>
+    <div class="room-actions">
+      <a class="btn btn-gold book-room-now" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline-ink request-room" href="#booking" data-room="Superior King Room">Ask front desk</a>
+    </div>
   </div>
 </div>
 
@@ -809,7 +1098,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="specs"><span>23 m²</span><span>2 single beds</span><span>Sleeps 2</span></div>
     <p>A quiet room with a private entrance, a seating area and a private bathroom with a shower.</p>
     <ul class="chips"><li>Quiet street view</li><li>Private entrance</li><li>Seating area</li><li>Minibar</li><li>Kettle</li></ul>
-    <a class="btn btn-ink request-room" href="#booking" data-room="Standard Double or Twin Room">Request this room <span class="arr">&rarr;</span></a>
+    <div class="room-actions">
+      <a class="btn btn-gold book-room-now" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline-ink request-room" href="#booking" data-room="Standard Double or Twin Room">Ask front desk</a>
+    </div>
   </div>
 </div>
 
@@ -943,7 +1235,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
     <div class="tours-progress"><i id="toursProg"></i></div>
     <div class="tours-foot">
-      <small>Drag the cards or use the arrows to explore all eight tours.</small>
+      <small>Drag the cards or use the arrows to explore all our curated tours.</small>
     </div>
   </div>
 </section>
@@ -1017,16 +1309,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="book-l">
     <span class="eyebrow">Reserve your stay</span>
     <h2 class="h2 rv" style="margin-top:18px">Book <em>direct</em> and save</h2>
-    <p>No middlemen, no commission. Send us your dates and we reply on WhatsApp within minutes — usually with a better rate than the platforms.</p>
+    <p>Reserve online in seconds for instant confirmation, or send a message straight to our front desk for custom dates, airport pickups and special requests.</p>
     <ul>
       <li>Best rate guaranteed when you book direct</li>
       <li>Free cancellation up to 48 hours before arrival</li>
       <li>Airport pickup arranged in advance</li>
     </ul>
+    <div class="instant-box rv">
+      <span class="ib-tag">Live availability · Instant confirmation</span>
+      <h3>Ready to lock in your room?</h3>
+      <p>View real-time rates and book securely on our official reservation portal.</p>
+      <a class="btn btn-gold" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
+    </div>
   </div>
 
   <form class="form" id="bookForm" novalidate>
-    <h3>Request a room</h3>
+    <h3>Message the front desk</h3>
+    <p class="form-sub">Have a special request or want our team to confirm directly? Send your details below.</p>
     <div class="f-row">
       <div class="fld"><label for="bName">Full name</label><input id="bName" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
       <div class="fld"><label for="bPhone">Phone / WhatsApp number</label><input id="bPhone" name="phone" type="tel" autocomplete="tel" placeholder="+20 1xx xxx xxxx"></div>
@@ -1060,8 +1359,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
     </div>
     <div class="fld"><label for="bMsg">Anything else?</label><textarea id="bMsg" name="message" placeholder="Airport pickup, late arrival, dietary needs…"></textarea></div>
-    <button class="btn btn-gold" type="submit">Book <span class="arr">&rarr;</span></button>
-    <small id="bNote">We will contact you on WhatsApp within minutes. No payment needed to request.</small>
+    <button class="btn btn-gold" type="submit">Send request <span class="arr">&rarr;</span></button>
+    <small id="bNote">Goes straight to our front desk — we will contact you on WhatsApp within minutes.</small>
   </form>
   <div class="my-reqs" id="myReqs" hidden></div>
 </div></div></section>
@@ -1091,6 +1390,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <span>Open 24 hours, every day</span>
       </div>
     </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Maria+Pyramids+House+Hadayek+Al+Ahram+Giza" target="_blank" rel="noopener noreferrer">Open in Google Maps &rarr;</a>
   </div>
 
   <div class="map">
@@ -1103,7 +1403,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <footer class="foot"><div class="wrap">
   <div class="foot-cta">
     <h2>Your window <em>on Giza.</em></h2>
-    <a class="btn btn-gold" href="#booking">Check availability <span class="arr">&rarr;</span></a>
+    <a class="btn btn-gold" href="https://be.aiosell.com/#!/book/5d79c6bd04" target="_blank" rel="noopener noreferrer" data-book-now="1">Book now <span class="arr">&rarr;</span></a>
   </div>
 
   <div class="foot-grid">
@@ -1175,7 +1475,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </section>
 
 <!-- TOUR REQUEST -->
-<div class="tq" id="tourModal" role="dialog" aria-modal="true" aria-label="Request a tour" aria-hidden="true">
+<div class="tq" id="tourModal" role="dialog" aria-modal="true" aria-label="Book a tour" aria-hidden="true">
   <div class="tq-card">
     <button class="tq-x" id="tourX" type="button" aria-label="Close">&times;</button>
     <span class="eyebrow">Private tour</span>
@@ -1199,11 +1499,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
       <div class="f-row">
         <div class="fld"><label for="tqPhone">Phone / WhatsApp number</label><input id="tqPhone" type="tel" autocomplete="tel" placeholder="+20 1xx xxx xxxx"></div>
-        <div class="fld"><label for="tqEmail">Email</label><input id="tqEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        <div class="fld"><label for="tqEmail">Your email</label><input id="tqEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
       </div>
-      <div class="fld"><label for="tqName">Your name</label><input id="tqName" type="text" autocomplete="name"></div>
-      <p class="tq-note" id="tqNote">We will contact you on WhatsApp within minutes to confirm availability and pick-up time. No payment is needed to request.</p>
-      <button class="btn btn-gold" type="submit" id="tqBtn">Request this tour <span class="arr">&rarr;</span></button>
+      <div class="fld"><label for="tqName">Your name</label><input id="tqName" type="text" autocomplete="name" placeholder="Full name"></div>
+      <div class="fld"><label for="tqNotes">Notes or pick-up details (optional)</label><input id="tqNotes" type="text" placeholder="Hotel pick-up time, language preference…"></div>
+      <div class="tq-email-hint">Your tour booking is sent directly to our front desk &amp; <b>mariapyramidshouse@gmail.com</b> with your email for instant reply.</div>
+      <p class="tq-note" id="tqNote">We will confirm availability and pick-up time by email and WhatsApp within minutes.</p>
+      <button class="btn btn-gold" type="submit" id="tqBtn">Book this tour <span class="arr">&rarr;</span></button>
     </form>
   </div>
 </div>
@@ -1215,7 +1517,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <img src="assets/logo.png" alt="" style="width:86px;margin:0 auto;display:block">
     <h3 style="margin-top:6px">Request received!</h3>
     <p class="tq-meta" id="sentText">Thank you — your request is with the front desk right now. <b>We will contact you on WhatsApp within minutes</b> to confirm everything.</p>
-    <button class="btn btn-gold" type="button" id="sentOk">Great, thank you</button>
+    <div class="sent-actions">
+      <button class="btn btn-gold" type="button" id="sentOk">Great, thank you</button>
+      <a class="btn btn-outline-ink" id="sentMailBtn" href="#" hidden>Send from my email app &rarr;</a>
+    </div>
   </div>
 </div>
 
@@ -1236,13 +1541,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
      CONFIG
      ============================================================ */
   var CONFIG = {
-    phone:     '201070004088',
-    phoneIntl: '+20 107 000 4088',
-    phoneLocal:'0107 000 4088',
-    email:     'stay@mariapyramidshouse.com',
-    instagram: 'https://www.instagram.com/mariapyramids/',
-    facebook:  'https://www.facebook.com/share/17o5npeKps/',
-    tiktok:    'https://www.tiktok.com/@maria.pyramids.ho'
+    phone:      '201070004088',
+    phoneIntl:  '+20 107 000 4088',
+    phoneLocal: '0107 000 4088',
+    email:      'stay@mariapyramidshouse.com',
+    tourEmail:  'mariapyramidshouse@gmail.com',
+    bookingUrl: 'https://be.aiosell.com/#!/book/5d79c6bd04',
+    instagram:  'https://www.instagram.com/mariapyramids/',
+    facebook:   'https://www.facebook.com/share/17o5npeKps/',
+    tiktok:     'https://www.tiktok.com/@maria.pyramids.ho'
   };
 
   /* ============================================================
@@ -1320,6 +1627,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   $$('a[href^="https://wa.me/"]').forEach(function (a) { a.href = 'https://wa.me/' + CONFIG.phone; });
   $$('a[href^="tel:"]').forEach(function (a) { a.href = 'tel:+' + CONFIG.phone; });
   $$('a[href^="mailto:"]').forEach(function (a) { a.href = 'mailto:' + CONFIG.email; });
+  $$('[data-book-now]').forEach(function (a) {
+    a.href = CONFIG.bookingUrl;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+  });
   $$('[data-social]').forEach(function (a) {
     var k = a.getAttribute('data-social');
     if (CONFIG[k]) a.href = CONFIG[k];
@@ -1328,7 +1640,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   var yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
 
   /* ============================================================
-     PRELOAD EVERYTHING, THEN REVEAL
+     FAST PRELOAD (hero + fonts) SO MOBILE & DESKTOP OPEN INSTANTLY
      ============================================================ */
   var loader = $('#loader');
 
@@ -1338,15 +1650,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     document.body.classList.add('ready');
     if (loader) {
       loader.classList.add('out');
-      setTimeout(function () { loader.classList.add('gone'); }, 1400);
+      setTimeout(function () { loader.classList.add('gone'); }, 1200);
     }
   }
 
-  function preloadPhotos() {
-    var urls = [];
-    Object.keys(PHOTOS).forEach(function (k) {
-      if (urls.indexOf(PHOTOS[k]) === -1) urls.push(PHOTOS[k]);
-    });
+  function preloadHero() {
+    var urls = [PHOTOS.hero, PHOTOS.about1].filter(Boolean);
     var total = urls.length, done = 0, settled = false;
     var bar = $('#loadBar'), pct = $('#loadPct');
 
@@ -1354,6 +1663,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       function finish() {
         if (settled) return;
         settled = true;
+        if (bar) bar.style.transform = 'scaleX(1)';
+        if (pct) pct.textContent = '100%';
         resolve();
       }
       function step() {
@@ -1371,18 +1682,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         im.onerror = step;
         im.src = url;
       });
-      setTimeout(finish, 12000);
+      setTimeout(finish, 1800);
     });
   }
 
   var fontsReady = (document.fonts && document.fonts.ready)
-    ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 3500); })])
+    ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 1200); })])
     : Promise.resolve();
 
-  Promise.all([preloadPhotos(), fontsReady]).then(function () {
-    setTimeout(reveal, 450);
+  Promise.all([preloadHero(), fontsReady]).then(function () {
+    setTimeout(reveal, 180);
   });
-  setTimeout(reveal, 14000);
+  setTimeout(reveal, 2200);
 
   /* ============================================================
      NAV
@@ -1495,13 +1806,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   });
 
   /* ============================================================
-     GALLERIES
+     GALLERIES (with counter + mobile swipe)
      ============================================================ */
   var galleries = [];
   $$('.gallery').forEach(function (g) {
     var imgs = $$('img', g);
     var dots = $$('.g-dots button', g);
     var prev = $('.gp', g), next = $('.gn', g), zoom = $('.zoom', g);
+    var counter = document.createElement('span');
+    counter.className = 'g-count';
+    g.appendChild(counter);
     var idx = 0, timer = null;
     function show(n) {
       idx = (n + imgs.length) % imgs.length;
@@ -1510,6 +1824,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         d.classList.remove('on');
         if (i === idx) { void d.offsetWidth; d.classList.add('on'); }
       });
+      counter.textContent = (idx + 1) + ' / ' + imgs.length;
       clearTimeout(timer);
       timer = setTimeout(function () {
         var room = g.closest('.room');
@@ -1522,6 +1837,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     if (next) next.addEventListener('click', function () { show(idx + 1); });
     dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i); }); });
     if (zoom) zoom.addEventListener('click', function () { openLightbox(galleries.indexOf(g)); });
+    var tx0 = 0, ty0 = 0;
+    g.addEventListener('touchstart', function (e) {
+      if (!e.touches || !e.touches.length) return;
+      tx0 = e.touches[0].clientX;
+      ty0 = e.touches[0].clientY;
+    }, { passive: true });
+    g.addEventListener('touchend', function (e) {
+      if (!e.changedTouches || !e.changedTouches.length) return;
+      var dx = e.changedTouches[0].clientX - tx0;
+      var dy = e.changedTouches[0].clientY - ty0;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? idx + 1 : idx - 1);
+    }, { passive: true });
     galleries.push({ el: g, imgs: imgs, show: show, get index() { return idx; } });
   });
 
@@ -1705,10 +2032,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     return lines.join('\n');
   }
 
-  function openSentModal(text) {
+  function openSentModal(text, mailtoHref) {
     var m = $('#sentModal');
     if (!m) return;
     if (text) $('#sentText').innerHTML = text;
+    var mailBtn = $('#sentMailBtn');
+    if (mailBtn) {
+      if (mailtoHref) {
+        mailBtn.href = mailtoHref;
+        mailBtn.hidden = false;
+      } else {
+        mailBtn.removeAttribute('href');
+        mailBtn.hidden = true;
+      }
+    }
     m.classList.add('open');
     m.setAttribute('aria-hidden', 'false');
   }
@@ -2001,7 +2338,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
   var ROOM_REQUEST_RE = /\b(room service|make a request|request something|order something|something for the room|towels?|pillows?|blankets?|toilet paper|tissues?|laundry|hair ?dryer)\b|\b(bring|deliver|get me|get us|send|order)\b.*\b(room|food|water|drink|stuff|something)\b/;
 
-  var QUICK = ['Book a room', 'Rooms', 'Tours', 'Rates', 'Location'];
+  var QUICK = ['Book now', 'Rooms', 'Tours', 'Rates', 'Location'];
   var DEFAULT_PH = 'Ask about rooms, dates, tours...';
   var mState = { step: null, room: '', checkin: '', checkout: '', guests: '', name: '', phone: '', email: '', topic: '', topicType: '', lastRequest: '' };
   var mGreeted = false;
@@ -2096,11 +2433,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   function showRoomPrice(r) {
     var info = $('#room-' + r.i + ' .room-info');
     if (!info) return;
+    var actions = $('.room-actions', info);
     var el = $('.room-price', info);
     if (!el) {
       el = document.createElement('p');
       el.className = 'room-price';
-      info.insertBefore(el, $('.request-room', info));
+      info.insertBefore(el, actions || $('.request-room', info));
     }
     var html = '';
     if (r.available === false) html = '<b>Fully booked</b><span>Ask on WhatsApp for other dates.</span>';
@@ -2109,22 +2447,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     el.innerHTML = html;
     el.hidden = !html;
 
-    // The booking button follows availability: booked out rooms ask on WhatsApp instead.
-    var cta = $('.request-room', info);
-    if (cta) {
-      if (r.available === false) {
-        cta.classList.add('is-off');
-        cta.removeAttribute('href');
-        cta.innerHTML = 'Ask about other dates on WhatsApp <span class="arr">&rarr;</span>';
-        cta.href = waLink('Hello Maria Pyramids House! Is the ' + r.name + ' free on other dates?');
-        cta.target = '_blank';
-        cta.rel = 'noopener';
-      } else {
-        cta.classList.remove('is-off');
-        cta.target = '';
-        cta.rel = '';
-        cta.href = '#booking';
-        cta.innerHTML = 'Request this room <span class="arr">&rarr;</span>';
+    // The booking buttons follow availability: booked out rooms ask on WhatsApp instead.
+    var bookBtn = $('.book-room-now', info);
+    var askBtn = $('.request-room', info);
+    if (r.available === false) {
+      if (bookBtn) {
+        bookBtn.classList.add('is-off');
+        bookBtn.innerHTML = 'Ask about other dates on WhatsApp <span class="arr">&rarr;</span>';
+        bookBtn.href = waLink('Hello Maria Pyramids House! Is the ' + r.name + ' free on other dates?');
+        bookBtn.target = '_blank';
+        bookBtn.rel = 'noopener noreferrer';
+      }
+      if (askBtn) askBtn.hidden = true;
+    } else {
+      if (bookBtn) {
+        bookBtn.classList.remove('is-off');
+        bookBtn.href = CONFIG.bookingUrl;
+        bookBtn.target = '_blank';
+        bookBtn.rel = 'noopener noreferrer';
+        bookBtn.innerHTML = 'Book now <span class="arr">&rarr;</span>';
+      }
+      if (askBtn) {
+        askBtn.hidden = false;
+        askBtn.classList.remove('is-off');
+        askBtn.target = '';
+        askBtn.rel = '';
+        askBtn.href = '#booking';
+        askBtn.textContent = 'Ask front desk';
       }
     }
     // The room tab gets a small "Full" badge so guests see it before opening the room.
@@ -2449,7 +2798,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     mState = { step: 'room', room: '', checkin: '', checkout: '', guests: '', name: '', phone: '', email: '', topic: '', topicType: '', lastRequest: '' };
     mInput.placeholder = DEFAULT_PH;
     setQuick(null);
-    say('Let us find your room. Which one would you like?', 480, roomChoices);
+    say('You can book online right away with instant confirmation, or pick a room below to send a message straight to our front desk.', 460, function () {
+      card(
+        '<h4>Instant online booking</h4>' +
+        '<p>Check live rates and reserve directly on our booking portal.</p>' +
+        '<div class="m-choices"><a class="m-gold" href="' + esc(CONFIG.bookingUrl) + '" target="_blank" rel="noopener noreferrer">Book now &rarr;</a></div>'
+      );
+      roomChoices();
+    });
   }
 
   function pickRoom(name) {
@@ -2683,7 +3039,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       : hasPrice(r.price) ? '<div><span>Rate</span><b>from ' + esc(money(r.price)) + ' per night</b></div>' : '';
     var bookBtn = r.available === false
       ? '<a class="m-cta" href="' + waLink('Hello Maria Pyramids House! Is the ' + r.name + ' free on other dates?') + '" target="_blank" rel="noopener">Ask about other dates</a>'
-      : '<button type="button" data-pick-room="' + esc(r.name) + '">Book this room</button>';
+      : '<a class="m-gold" href="' + esc(CONFIG.bookingUrl) + '" target="_blank" rel="noopener noreferrer">Book now &rarr;</a><button type="button" data-pick-room="' + esc(r.name) + '">Message front desk</button>';
     say('Here is the ' + r.short + ' in detail.', 430, function () {
       card(
         '<h4>' + esc(r.name) + '</h4>' +
@@ -3077,30 +3433,77 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       var photo = PHOTOS['tour-' + ((i % 10) + 1)] || '';
       var label = [x.cat, x.len].filter(Boolean).join(' · ');
       var short = x.summary && x.summary.length > 130 ? x.summary.slice(0, 130).replace(/\s+\S*$/, '') + '…' : (x.summary || '');
-      return '<article class="tour">' +
+      return '<article class="tour" data-choose-tour="' + esc(x.id) + '">' +
         (photo ? '<img src="' + photo + '" alt="' + esc(x.name) + '" loading="lazy">' : '') +
         (label ? '<span class="tag">' + esc(label) + '</span>' : '') +
+        (hasPrice(x.price) ? '<span class="tprice-badge">From ' + esc(money(x.price)) + '</span>' : '') +
         '<div class="tour-body">' +
           '<span class="num">' + pad2(i + 1) + '</span>' +
           '<h3>' + esc(x.name) + '</h3>' +
-          (hasPrice(x.price) ? '<span class="tprice">from ' + esc(money(x.price)) + ' per person</span>' : '') +
           (short ? '<p>' + esc(short) + '</p>' : '') +
-          '<button type="button" class="ask tour-choose" data-choose-tour="' + esc(x.id) + '">Choose this tour &rarr;</button>' +
+          '<button type="button" class="ask tour-choose" data-choose-tour="' + esc(x.id) + '">Book this tour &rarr;</button>' +
         '</div></article>';
     });
     track.innerHTML = cards.join('');
     updateTours();
     var sub = $('#toursSub');
-    if (sub) sub.textContent = (TOURS.length === 8 ? 'Eight experiences we arrange ourselves' :
-      countWord(TOURS.length) + (TOURS.length === 1 ? ' experience we arrange' : ' experiences we arrange') + ' ourselves') +
-      ' — from sunrise at the plateau to a felucca at golden hour.';
+    if (sub) {
+      var cw = countWord(TOURS.length);
+      cw = cw.charAt(0).toUpperCase() + cw.slice(1);
+      sub.textContent = cw + (TOURS.length === 1 ? ' experience we arrange' : ' experiences we arrange') +
+        ' ourselves — from sunrise at the plateau to a felucca at golden hour.';
+    }
   }
 
   /* ============================================================
-     TOUR REQUEST MODAL
+     TOUR REQUEST MODAL — sends to Owner Desk + mariapyramidshouse@gmail.com
      ============================================================ */
   var tourModal = $('#tourModal'), tourForm = $('#tourForm'), tourNote = $('#tqNote');
   var tqTour = null;
+
+  function sendTourEmail(payload) {
+    if (!window.fetch || !CONFIG.tourEmail) return Promise.resolve(false);
+    return fetch('https://formsubmit.co/ajax/' + CONFIG.tourEmail, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New Tour Booking: ' + payload.tour + ' (' + payload.name + ')',
+        _replyto: payload.email,
+        _template: 'table',
+        _captcha: 'false',
+        name: payload.name,
+        email: payload.email,
+        Tour: payload.tour,
+        Price: payload.price || 'Confirm with front desk',
+        Preferred_Date: payload.date || 'Flexible',
+        Guests: payload.guests,
+        Phone_WhatsApp: payload.phone,
+        Notes: payload.notes || 'None'
+      })
+    }).then(function (r) { return r.ok; }).catch(function () { return false; });
+  }
+
+  function buildTourMailto(payload) {
+    var subject = 'Tour Booking Request: ' + payload.tour + ' — ' + payload.name;
+    var lines = [
+      'Hello Maria Pyramids House,',
+      '',
+      'I would like to book the following private tour:',
+      '',
+      'Tour: ' + payload.tour,
+      (payload.price ? 'Rate: ' + payload.price : ''),
+      'Name: ' + payload.name,
+      'Email: ' + payload.email,
+      'Phone / WhatsApp: ' + payload.phone,
+      'Preferred date: ' + (payload.date || 'Flexible'),
+      'Guests: ' + payload.guests,
+      (payload.notes ? 'Notes: ' + payload.notes : ''),
+      '',
+      'Thank you!'
+    ].filter(function (l, i, arr) { return l !== '' || (i > 0 && arr[i - 1] !== ''); });
+    return 'mailto:' + CONFIG.tourEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+  }
+
   function openTourModal(id) {
     var x = tourById(id);
     if (!x || !tourModal) return;
@@ -3115,9 +3518,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     $('#tqName').value = '';
     $('#tqPhone').value = '';
     $('#tqEmail').value = '';
+    if ($('#tqNotes')) $('#tqNotes').value = '';
     $$('.fld input, .fld select', tourModal).forEach(function (el) { el.classList.remove('bad'); });
     tourNote.classList.remove('err');
-    tourNote.textContent = 'We will contact you on WhatsApp within minutes to confirm availability and pick-up time. No payment is needed to request.';
+    tourNote.textContent = 'We will confirm availability and pick-up time by email and WhatsApp within minutes.';
     $('#tqBtn').disabled = false;
     tourModal.classList.add('open');
     tourModal.setAttribute('aria-hidden', 'false');
@@ -3132,14 +3536,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   if (tourModal) {
     $('#tourX').addEventListener('click', closeTourModal);
     tourModal.addEventListener('click', function (e) { if (e.target === tourModal) closeTourModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      if (tourModal.classList.contains('open')) closeTourModal();
+      if ($('#sentModal') && $('#sentModal').classList.contains('open')) closeSentModal();
+    });
     tourForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!tqTour) return;
+      $$('.fld input, .fld select', tourModal).forEach(function (el) { el.classList.remove('bad'); });
       var name = $('#tqName').value.trim();
       var phone = $('#tqPhone').value.trim();
       var email = $('#tqEmail').value.trim();
       var date = $('#tqDate').value;
       var guests = $('#tqGuests').value;
+      var notes = $('#tqNotes') ? $('#tqNotes').value.trim() : '';
       var bad = [];
       if (!name) bad.push($('#tqName'));
       if (!phone || !PHONE_RE.test(phone)) bad.push($('#tqPhone'));
@@ -3153,17 +3564,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         bad[0].focus({ preventScroll: true });
         return;
       }
-      var details = 'Tour request\n\nTour: ' + tqTour.name + '\nName: ' + name +
+      var priceText = hasPrice(tqTour.price) ? ('from ' + money(tqTour.price) + ' per person') : '';
+      var details = 'Tour request\n\nTour: ' + tqTour.name +
+        (priceText ? '\nRate: ' + priceText : '') +
+        '\nName: ' + name +
         '\nPhone/WhatsApp: ' + phone + '\nEmail: ' + email +
-        '\nPreferred date: ' + (date || 'flexible — ask the team') + '\nGuests: ' + guests;
+        '\nPreferred date: ' + (date || 'flexible — ask the team') + '\nGuests: ' + guests +
+        (notes ? '\nNotes: ' + notes : '');
       var tourName = tqTour.name;
+      var payload = { tour: tourName, price: priceText, name: name, phone: phone, email: email, date: date, guests: guests, notes: notes };
       var btn = $('#tqBtn');
       btn.disabled = true;
       saveRequest(PENDING[pending('tour', tourName, '', name, details)], function () {
         tourNote.classList.remove('err');
-        tourNote.textContent = 'Request sent to the front desk. We will contact you on WhatsApp within minutes.';
+        tourNote.textContent = 'Request sent to the front desk & emailed to ' + CONFIG.tourEmail + '.';
       });
-      openSentModal('Thank you, ' + esc(firstName(name)) + ' — your request for the <b>' + esc(tourName) + '</b> tour is with the front desk right now. <b>We will contact you on WhatsApp within minutes</b> to confirm availability and pick-up.');
+      sendTourEmail(payload);
+      openSentModal(
+        'Thank you, ' + esc(firstName(name)) + ' — your booking for <b>' + esc(tourName) + '</b> has been sent to our front desk and emailed to <b>' + esc(CONFIG.tourEmail) + '</b> with your email (<b>' + esc(email) + '</b>) for instant reply.',
+        buildTourMailto(payload)
+      );
       closeTourModal();
       refreshMine();
     });
